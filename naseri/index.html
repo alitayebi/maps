@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>تهران ناصری | نقشه دارالخلافه ناصری</title>
+  <meta name="description" content="نقشه دارالخلافه ناصری که به فرمان ناصرالدین شاه در سال ۱۲۸۵ قمری شروع و در سال ۱۳۰۵ منتشر شد. این نقشه از آرشیو کتابخانه کنگره ایالات متحده دریافت شده و بعد از مکانی شدن و تطبیق با نقشه و عکس هوایی امروز تهران بر بستر لیف‌لت منتشر شده است.">
+
+  <link rel="shortcut icon" type="image/png" href="assets/thumbnail-sq.png">
+  <link rel="shortcut icon" sizes="196x196" href="assets/thumbnail-sq.png">
+  <link rel="apple-touch-icon" href="assets/thumbnail-sq.png" >
+
+   <!-- Facebook integration -->
+  <meta property="og:title" content="نقشه دارالخلافه ناصری تهران"/>
+  <meta property="og:image" content="http://tayebi.org/maps/naseri/assets/thumbnail-hr.png"/>
+  <meta property="og:url" content="http://tayebi.org/maps/naseri"/>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="تهران ناصری"/>
+  <meta property="og:description" content="نقشه دارالخلافه ناصری که به فرمان ناصرالدین شاه در سال ۱۲۸۵ قمری شروع و در سال ۱۳۰۵ منتشر شد. این نقشه از آرشیو کتابخانه کنگره ایالات متحده دریافت شده و بعد از مکانی شدن و تطبیق با نقشه و عکس هوایی امروز تهران بر بستر لیف‌لت منتشر شده است."/>
+
+  <!-- Twitter integration -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="https://twitter.com/alitayebi">
+  <meta name="twitter:title" content="نقشه دارالخلافه ناصری تهران" />
+  <meta name="twitter:image" content="http://tayebi.org/maps/naseri/assets/thumbnail-hr.png" />
+  <meta name="twitter:url" content="http://tayebi.org/maps/naseri" />
+  <meta name="twitter:description" content="نقشه دارالخلافه ناصری که به فرمان ناصرالدین شاه در سال ۱۲۸۵ قمری شروع و در سال ۱۳۰۵ منتشر شد. این نقشه از آرشیو کتابخانه کنگره ایالات متحده دریافت شده و بعد از مکانی شدن و تطبیق با نقشه و عکس هوایی امروز تهران بر بستر لیف‌لت منتشر شده است." />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../assets/fonts/fontawesome/css/all.css">
+    <script src='http://cdn.leafletjs.com/leaflet/v1.3.1/leaflet.js'></script>
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=Promise"></script>
+    <script src="../../assets/js/leaflet-bing-layer.js"></script>
+    <script src="../../assets/js/leaflet-side-by-side.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="../../assets/js/L.Map.Sync.js"></script>
+    <link href='http://cdn.leafletjs.com/leaflet/v1.3.1/leaflet.css' rel='stylesheet' />
+    <link rel="stylesheet" href="../../assets/css/custom.css">
+</head>
+
+<body>
+    <div id='map' class="map"></div>
+    <div id='minimap' class="minimap">
+      <div id="minimap-caption">عکس ماهواره‌ای</div>
+    </div>
+    <div id="slider" class="slidecontainer">
+      <i class="far fa-circle"></i>
+      <input class="slider" type="range" min="0" max="1" step="0.1" value="1" oninput="naseriLayer.setOpacity(this.value)">
+      <i class="fas fa-circle"></i>
+    </div>
+    <script>
+//    var southWest = L.latLng(35.660157, 51.396178);
+//    var northEast = L.latLng(35.701953, 51.448063);
+    var bigmap = 'osmLayer';
+    var minimap = 'bing'
+    var map = L.map('map', {
+//      maxBounds: L.latLngBounds(southWest, northEast),
+    }).setView([35.679492, 51.422418], 17);
+//    map.setMinZoom( map.getBoundsZoom( map.options.maxBounds ) );
+    var minimap = L.map('minimap', {
+      attributionControl: false,
+      zoomControl: false
+    }).setView([35.679492, 51.422418], 15);
+    map.sync(minimap);
+    minimap.sync(map);
+    minimap.dragging.disable();
+    minimap.touchZoom.disable();
+    minimap.doubleClickZoom.disable();
+    minimap.scrollWheelZoom.disable();
+    //logo position: bottomright, topright, topleft, bottomleft
+    var logo = L.control({position: 'topright'});
+    logo.onAdd = function(map){
+        var div = L.DomUtil.create('div', 'logo text-light text-right');
+        div.innerHTML= "<h1>تهران ناصری</h1><h6>نقشه دارالخلافه ناصری ۱۳۰۵ قمری</h6>";
+        return div;
+    }
+    logo.addTo(map);
+
+    var toggle = false;
+    var BING_KEY = 'AkwDTcH4epAKXHmlozwuWwEJ1DJ6xWDYNvENvudEPdWqv0vL7YutwurTTpTn8306';
+    var osmLayer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://twitter.com/alitayebi">Ali Tayebi<\/a>'
+    }).addTo(map);
+    var osmMiniLayer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap<\/a>'
+    });
+    var naseriLayer = L.tileLayer('naseriTiles/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap<\/a>',
+        opacity: 1.0
+    }).addTo(map);
+    var bingLayer = L.tileLayer.bing(BING_KEY);
+    var bingMiniLayer = L.tileLayer.bing(BING_KEY).addTo(minimap);
+    var sideBySideControl = L.control.sideBySide(null, naseriLayer).addTo(map);
+    $( "#minimap" ).click(function() {
+      if(!toggle) {
+        map.removeLayer(osmLayer);
+        map.removeLayer(naseriLayer);
+        map.addLayer(bingLayer);
+        map.addLayer(naseriLayer);
+        minimap.removeLayer(bingMiniLayer);
+        minimap.addLayer(osmMiniLayer);
+        console.log('not toggled');
+        map.removeControl(sideBySideControl);
+        sideBySideControl = L.control.sideBySide(null,naseriLayer).addTo(map);
+        $('#minimap-caption').text('نقشه');
+      } else {
+        map.addLayer(osmLayer);
+        map.removeLayer(naseriLayer);
+        map.removeLayer(bingLayer);
+        map.addLayer(naseriLayer);
+        minimap.removeLayer(osmMiniLayer);
+        minimap.addLayer(bingMiniLayer);
+        map.removeControl(sideBySideControl);
+        sideBySideControl = L.control.sideBySide(null,naseriLayer).addTo(map);
+        $('#minimap-caption').text('عکس ماهواره‌ای');
+        console.log('toggled');
+      }
+      toggle = !toggle;
+    });
+    window.onload = init();
+    </script>
+  </body>
+</html>
