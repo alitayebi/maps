@@ -2,11 +2,11 @@
 	font-family: IRANSans;
 	font-style: normal;
 	font-weight: 900;
-	src: url('../../assets/fonts/eot/IRANSansWeb_Black.eot');
-	src: url('../../assets/fonts/eot/IRANSansWeb_Black.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
-		 url('../../assets/fonts/woff2/IRANSansWeb_Black.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
-		 url('../../assets/fonts/woff/IRANSansWeb_Black.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-		 url('../../assets/fonts/ttf/IRANSansWeb_Black.ttf') format('truetype');
+	src: url('../assets/fonts/eot/IRANSansWeb_Black.eot');
+	src: url('../assets/fonts/eot/IRANSansWeb_Black.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+		 url('../assets/fonts/woff2/IRANSansWeb_Black.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('../assets/fonts/woff/IRANSansWeb_Black.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+		 url('../assets/fonts/ttf/IRANSansWeb_Black.ttf') format('truetype');
 }
 @font-face {
 	font-family: IRANSans;
@@ -32,31 +32,31 @@
 	font-family: IRANSans;
 	font-style: normal;
 	font-weight: 300;
-	src: url('/assets/fonts/eot/IRANSansWeb_Light.eot');
-	src: url('/assets/fonts/eot/IRANSansWeb_Light.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
-		 url('/assets/fonts/woff2/IRANSansWeb_Light.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
-		 url('/assets/fonts/woff/IRANSansWeb_Light.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-		 url('/assets/fonts/ttf/IRANSansWeb_Light.ttf') format('truetype');
+	src: url('../../assets/fonts/eot/IRANSansWeb_Light.eot');
+	src: url('../../assets/fonts/eot/IRANSansWeb_Light.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+		 url('../../assets/fonts/woff2/IRANSansWeb_Light.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('../../assets/fonts/woff/IRANSansWeb_Light.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+		 url('../../assets/fonts/ttf/IRANSansWeb_Light.ttf') format('truetype');
 }
 @font-face {
 	font-family: IRANSans;
 	font-style: normal;
 	font-weight: 200;
-	src: url('/assets/fonts/eot/IRANSansWeb_UltraLight.eot');
-	src: url('/assets/fonts/eot/IRANSansWeb_UltraLight.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
-		 url('/assets/fonts/woff2/IRANSansWeb_UltraLight.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
-		 url('/assets/fonts/woff/IRANSansWeb_UltraLight.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-		 url('/assets/fonts/ttf/IRANSansWeb_UltraLight.ttf') format('truetype');
+	src: url('../../assets/fonts/eot/IRANSansWeb_UltraLight.eot');
+	src: url('../../assets/fonts/eot/IRANSansWeb_UltraLight.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+		 url('../../assets/fonts/woff2/IRANSansWeb_UltraLight.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('../../assets/fonts/woff/IRANSansWeb_UltraLight.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+		 url('../../assets/fonts/ttf/IRANSansWeb_UltraLight.ttf') format('truetype');
 }
 @font-face {
 	font-family: IRANSans;
 	font-style: normal;
 	font-weight: normal;
-	src: url('/assets/fonts/eot/IRANSansWeb.eot');
-	src: url('/assets/fonts/eot/IRANSansWeb.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
-		 url('/assets/fonts/woff2/IRANSansWeb.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
-		 url('/assets/fonts/woff/IRANSansWeb.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-		 url('/assets/fonts/ttf/IRANSansWeb.ttf') format('truetype');
+	src: url('../../assets/fonts/eot/IRANSansWeb.eot');
+	src: url('../../assets/fonts/eot/IRANSansWeb.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+		 url('../../assets/fonts/woff2/IRANSansWeb.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('../../assets/fonts/woff/IRANSansWeb.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+		 url('../../assets/fonts/ttf/IRANSansWeb.ttf') format('truetype');
 }
 
 html, body {

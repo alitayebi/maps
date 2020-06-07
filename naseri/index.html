@@ -82,10 +82,10 @@
 
     var toggle = false;
     var BING_KEY = 'AkwDTcH4epAKXHmlozwuWwEJ1DJ6xWDYNvENvudEPdWqv0vL7YutwurTTpTn8306';
-    var osmLayer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    var osmLayer = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://twitter.com/alitayebi">Ali Tayebi<\/a>'
     }).addTo(map);
-    var osmMiniLayer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    var osmMiniLayer = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap<\/a>'
     });
     var naseriLayer = L.tileLayer('naseriTiles/{z}/{x}/{y}.png', {
@@ -121,7 +121,6 @@
       }
       toggle = !toggle;
     });
-    window.onload = init();
     </script>
   </body>
 </html>
