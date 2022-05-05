@@ -2,13 +2,13 @@
 <head>
   <meta charset="utf-8">
   <title>وضعیت محدوده امن مدارس در شهرستان بابل</title>
-  <link rel="stylesheet" href="../assets/leaflet/leaflet.css" />
+  <link rel="stylesheet" href="leaflet.css" />
   <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.css' rel='stylesheet' />
-  <link rel="stylesheet" href="../assets/css/clusterpies.css" />
-</head>
+  <link rel="stylesheet" href="clusterpies.css" />
+</head>  
 <body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="../assets/leaflet/leaflet.js" charset="utf-8"></script>
+<script src="leaflet.js" charset="utf-8"></script>
 <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js'></script>
 <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 
@@ -21,7 +21,7 @@
     var fieldLyr = "signn";
   } else{
           var fieldLyr = "bumpn";
-  }
+  } 
 });
   var geojson,
     metadata,
@@ -38,7 +38,7 @@
       iconCreateFunction: defineClusterIcon //this is where the magic happens
     }),
     map = L.map('map').setView([36.55229285487554, 52.675323486328125], 13);
-
+    
   //Add basemap
   var osm = L.tileLayer(tileServer, {attribution: tileAttribution,  maxZoom: 18}).addTo(map);
   //and the empty markercluster layer
@@ -82,7 +82,7 @@ function defineFeaturePopup(feature, layer) {
   var props = feature.properties,
     fields = metadata.fields,
     popupContent = '';
-
+    
   popupFields.map( function(key) {
     if (props[key]) {
       var val = props[key],
@@ -122,7 +122,7 @@ function defineClusterIcon(cluster) {
         //Create a new divIcon and assign the svg markup to the html property
         myIcon = new L.DivIcon({
             html: html,
-            className: 'marker-cluster',
+            className: 'marker-cluster', 
             iconSize: new L.Point(iconDim, iconDim)
         });
     return myIcon;
@@ -144,13 +144,13 @@ function bakeThePie(options) {
         pieClass = options.pieClass?options.pieClass:'marker-cluster-pie', //Class for the whole pie
         pieLabel = options.pieLabel?options.pieLabel:d3.sum(data,valueFunc), //Label for the whole pie
         pieLabelClass = options.pieLabelClass?options.pieLabelClass:'marker-cluster-pie-label',//Class for the pie label
-
+        
         origo = (r+strokeWidth), //Center coordinate
         w = origo*2, //width and height of the svg element
         h = w,
         donut = d3.layout.pie(),
         arc = d3.svg.arc().innerRadius(rInner).outerRadius(r);
-
+        
     //Create an svg element
     var svg = document.createElementNS(d3.ns.prefix.svg, 'svg');
     //Create the pie chart
@@ -159,20 +159,20 @@ function bakeThePie(options) {
         .attr('class', pieClass)
         .attr('width', w)
         .attr('height', h);
-
+        
     var arcs = vis.selectAll('g.arc')
         .data(donut.value(valueFunc))
         .enter().append('svg:g')
         .attr('class', 'arc')
         .attr('transform', 'translate(' + origo + ',' + origo + ')');
-
+    
     arcs.append('svg:path')
         .attr('class', pathClassFunc)
         .attr('stroke-width', strokeWidth)
         .attr('d', arc)
         .append('svg:title')
           .text(pathTitleFunc);
-
+                
     vis.append('text')
         .attr('x',origo)
         .attr('y',origo)
@@ -185,7 +185,7 @@ function bakeThePie(options) {
     //Return the svg-markup rather than the actual element
     return serializeXmlNode(svg);
 }
-//disable default scroll
+//disable default scroll 
   map.scrollWheelZoom.disable();
 
   $("#map").bind('mousewheel DOMMouseScroll', function (event) {
@@ -215,14 +215,14 @@ function renderLegend() {
     var data = d3.entries(metadata.fields[categoryField].lookup),
       legenddiv = d3.select('body').append('div')
         .attr('id','legend');
-
+        
     var heading = legenddiv.append('div')
         .classed('legendheading', true)
         .text(metadata.fields[categoryField].name);
 
     var legenditems = legenddiv.selectAll('.legenditem')
         .data(data);
-
+        
     legenditems
         .enter()
         .append('div')
@@ -240,6 +240,6 @@ function serializeXmlNode(xmlNode) {
     }
     return "";
 }
-
+    
 </script>
 </body>
