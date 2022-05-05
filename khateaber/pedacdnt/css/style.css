@@ -1,0 +1,160 @@
+@font-face {
+  font-family: Vazir;
+  src: url("../../../assets/fonts/Vazir.eot");
+  src: url("../../../assets/fonts/Vazir.eot?#iefix") format("embedded-opentype"), url("../../../assets/fonts/Vazir.woff2") format("woff2"), url("../../../assets/fonts/Vazir.woff") format("woff"), url("../../../assets/fonts/Vazir.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: Vazir;
+  src: url("../../../assets/fonts/Vazir-Bold.eot");
+  src: url("../../../assets/fonts/Vazir-Bold.eot?#iefix") format("embedded-opentype"), url("../../../assets/fonts/Vazir-Bold.woff2") format("woff2"), url("../../../assets/fonts/Vazir-Bold.woff") format("woff"), url("../../../assets/fonts/Vazir-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal; }
+@font-face {
+  font-family: Vazir;
+  src: url("../../../assets/fonts/Vazir-Black.eot");
+  src: url("../../../assets/fonts/Vazir-Black.eot?#iefix") format("embedded-opentype"), url("../../../assets/fonts/Vazir-Black.woff2") format("woff2"), url("../../../assets/fonts/Vazir-Black.woff") format("woff"), url("../../../assets/fonts/Vazir-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal; }
+@font-face {
+  font-family: Vazir;
+  src: url("../../../assets/fonts/Vazir-Medium.eot");
+  src: url("../../../assets/fonts/Vazir-Medium.eot?#iefix") format("embedded-opentype"), url("../../../assets/fonts/Vazir-Medium.woff2") format("woff2"), url("../../../assets/fonts/Vazir-Medium.woff") format("woff"), url("../../../assets/fonts/Vazir-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal; }
+@font-face {
+  font-family: Vazir;
+  src: url("../../../assets/fonts/Vazir-Light.eot");
+  src: url("../../../assets/fonts/Vazir-Light.eot?#iefix") format("embedded-opentype"), url("../../../assets/fonts/Vazir-Light.woff2") format("woff2"), url("../../../assets/fonts/Vazir-Light.woff") format("woff"), url("../../../assets/fonts/Vazir-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal; }
+@font-face {
+  font-family: Vazir;
+  src: url("../../../assets/fonts/Vazir-Thin.eot");
+  src: url("../../../assets/fonts/Vazir-Thin.eot?#iefix") format("embedded-opentype"), url("../../../assets/fonts/Vazir-Thin.woff2") format("woff2"), url("../../../assets/fonts/Vazir-Thin.woff") format("woff"), url("../../../assets/fonts/Vazir-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal; }
+
+html, body, #map {
+    font-family: Vazir;
+    height:100% !important;
+    margin:0;
+    padding:0;
+}
+.geoImg {
+    width:100%;
+    margin: 0 auto 10px auto;
+    display: block;
+}
+.geoTitle, .geoAuthor {
+    text-align: center;
+    width: 85%;
+    margin: 0 auto;
+}
+.geoDes {
+    width: 80%;
+    margin: 0 auto;
+    text-align: justify;
+    padding: 0 0 0 10px;
+}
+.geoAudio {
+    width:85%;
+    margin: 20 auto;
+    display: block;
+}
+.geoDateLoc {
+    margin: 0 auto;
+    width: 85%;
+    text-align: center;
+    color: darkslategray;
+}
+ /* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 350px; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Stay on top */
+  top: 0; /* Stay at the top */
+  right: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  color: whitesmoke;
+    text-align: justify;
+
+}
+.psidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0px; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  text-align: center !important;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  color: whitesmoke;
+    text-align: justify;
+
+}
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+.sidenav i {
+    width: 35px;
+    text-align: center;
+}
+.sidenav div {
+    margin: 0 50px 0 20px;
+}
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  left : 25px;
+  font-size: 36px;
+  margin-right: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#map {
+  transition: margin-right .5s;
+  transition: margin-left .5s;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+.accordion-toggle {
+  display: block;
+}
+
+.accordion-content {
+  display: none;
+}
+
+.accordion-content.active {
+  display: block;
+}
+#sideNavContent {
+    width: 350px;
+    margin: 0 auto;
+}
+.nav-title {
+    color: white !important;
+    font-size: xx-large !important;
+}

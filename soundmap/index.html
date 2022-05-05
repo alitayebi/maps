@@ -1,0 +1,53 @@
+<html dir="rtl" lang="fa-IR">
+    <head>
+        <meta charset="UTF-8">
+        <title>صدای اعتراض شهر</title>
+        <link rel="stylesheet" href="../assets/leaflet/leaflet.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="../assets/css/MarkerCluster.css" />
+    	<link rel="stylesheet" href="../assets/css/MarkerCluster.Default.css" />
+    	<link rel="stylesheet" href="../assets/fonts/fontawesome/css/all.css" />
+    </head>
+    <body>
+        <div id="mainSidenav" class="sidenav" onclick="openNav()" >
+            <div id="sideNavContent">
+                <a onclick="openNav()" href="#"><i class="fas fa-bars"></i></a>
+                <a class="accordion-toggle nav-title"><i class="fas fa-bullhorn fa-flip-horizontal"></i> صدای اعتراض شهر</a>
+                <a href="#content-1" class="accordion-toggle"><i class="fas fa-info" class="accordion-toggle"></i> معرفی</a>
+                <div class="accordion-content active" id="content-1">
+                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
+                </div>
+                <a href="#content-2" class="accordion-toggle"><i class="fas fa-microphone-alt" class="accordion-toggle"></i> ضبط صدا</a>
+                <div class="accordion-content" id="content-2">
+                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
+                </div>
+                <a href="#content-3" class="accordion-toggle"><i class="fas fa-reply-all" class="accordion-toggle"></i> تماس با ما</a>
+                <div class="accordion-content" id="content-3">
+                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
+                </div>
+                <a href="#content-4" class="accordion-toggle"><i class="fas fa-flag" class="accordion-toggle"></i> گزارش خطا</a>
+                <div class="accordion-content" id="content-4">
+                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
+                </div>
+            </div>
+        </div>
+        <div id="map"></div>
+        <div id="popSidenav" class="psidenav">
+            <img class="geoImg" src="">
+            <h1 class="geoTitle"></h1>
+            <h3 class="geoAuthor"></h3>
+            <h4 class="geoDateLoc"></h4>
+            <audio class="geoAudio" controls src="">
+                مرورگر شما از پخش‌کننده فایل صوتی پشتیبانی نمی‌کند.
+            </audio>
+            <div class="geoDes"></div>
+        </div>
+
+        <script src="js/custom.js"></script>
+        <script src="../assets/js/jquery-3.6.0.js"></script>
+        <script src="../assets/leaflet/leaflet.js"></script>
+        <script src="../assets/js/leaflet.ajax.js"></script>
+        <script src="../assets/js/leaflet.markercluster.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

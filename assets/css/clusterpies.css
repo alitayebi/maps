@@ -1,0 +1,165 @@
+html, body, #map {
+        margin: 0;
+        padding: 0;
+        height: 100% !important; 
+        position: unset !important;
+    direction: rtl;
+    }
+#container {
+    height: 100%
+}
+#legend {
+  position: absolute;
+  top: 3px;
+  right: 0px;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  z-index: 100;
+  font-size: 1em;
+  font-family: tahoma;
+  width: 165px;
+  background: rgba(255,255,255,0.6);
+    direction: rtl;
+}
+.legendheading {
+  position: relative;
+  height: 25px;
+  padding: 5px 2px 0px 2px;
+  font-size: larger;
+  font-weight: bold;
+}
+.legenditem {
+  padding: 5px;
+  margin-bottom: 2px;
+}
+.leaflet-popup-content-wrapper {
+    text-align: right;
+    font-family: tahoma;
+    min-height: 175px;
+    min-width: 250px;
+}
+
+/*Marker clusters*/
+.marker-cluster-pie g.arc{
+  fill-opacity: 0.5;
+}
+.marker-cluster-pie-label {
+  font-size: 14px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+/*Markers*/
+.marker {
+  width: 18px;
+  height: 18px;
+  border-width: 2px;
+  border-radius:10px;
+  margin-top: -10px;
+  margin-left: -10px;
+  border-style: solid;
+  fill: #CCC;
+  stroke: #444;
+  background: #CCC;
+  border-color: #444;
+}
+.marker div{
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+/*marker categories*/
+.category-1{
+  fill: #BFB;
+  stroke: #070;
+  background: #BFB;
+  border-color: #070;
+}
+.category-2{
+  fill: #FF3;
+  stroke: #D80;
+  background: #FF3;
+  border-color: #D80;
+}
+.category-3{
+  fill: #F88;
+  stroke: #800;
+  background: #F88;
+  border-color: #800;
+}
+.category-4{
+  fill: #FA0;
+  stroke: #B60;
+  background: #FA0;
+  border-color: #B60;
+}
+.category-5{
+  fill: #9DF;
+  stroke: #007;
+  background: #9DF;
+  border-color: #007;
+}
+.category-6{
+  fill: #CCC;
+  stroke: #444;
+  background: #CCC;
+  border-color: #444;
+}
+
+/*marker icons*/
+.icon-1{
+  background-image: url('school-16.png');
+  background-repeat: no-repeat;
+  background-position: 0px 1px;
+}
+.icon-2{
+  background-image: url('school-16.png');
+  background-repeat: no-repeat;
+  background-position: 1px 0px;
+}
+.icon-3{
+  background-image: url('school-16.png');
+  background-repeat: no-repeat;
+  background-position: 1px 0px;
+}
+.icon-4{
+  background-image: url('school-16.png');
+  background-repeat: no-repeat;
+  background-position: 1px 0px;
+}
+
+/*Popup*/
+.map-popup span.heading {
+  display: block;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.map-popup span.attribute: {
+  display: block;
+}
+.map-popup span.label {
+  font-weight: bold;
+}
+.map-scroll:hover:before {
+content: 'Use ctrl + scroll to zoom the map';
+position: absolute;
+top: 50%;
+z-index: 999;
+font-size: 34px;
+width: 100%;
+text-align: center;
+color: white;
+ }
+ .map-scroll:hover:after {
+position: absolute;
+left: 0;
+right: 0;
+bottom: 0;
+top: 0;
+content: '';
+background: #00000061;
+z-index: 998;
+}
