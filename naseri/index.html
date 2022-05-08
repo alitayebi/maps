@@ -89,8 +89,8 @@
     logo.addTo(map);
     L.control.locate({
       keepCurrentZoomLevel: true,
-      showCompass: true,
-      circlePadding: [0, 0]
+      flyTo: true,
+      cacheLocation
     }).addTo(map);
     var toggle = false;
     var BING_KEY = 'AsQzgKkluyFfXdrAPHVQeZkcT4T5jgdoJoeaKxf4h40bQjpolmmXDysMpPf98AhK';
