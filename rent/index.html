@@ -26,7 +26,7 @@
 	  <meta name="twitter:description" content="در این نقشه تغییرات توان اجاره‌نشینی در تهران از سال ۱۳۸۸ بر اساس درآمد نشان داده شده است." />
 		<link rel="stylesheet" href="../assets/leaflet/leaflet.css">
 		<link rel="stylesheet" href="../assets/leaflet/leaflet-slider.css">
-		<link rel="stylesheet" href="assets/style.css?v=0.2">
+		<link rel="stylesheet" href="assets/style.css?v=0.3">
 	</head>
 	<body>
 		<div id="wrapper">
@@ -46,14 +46,14 @@
 					<p>زمان: <span class='timeTxt'></span></p>
 					<input name='timestamp' type="range" min="1" max="" step="1" value="">
 					<small>معادل حقوق: <span class="salCalbr"></span> | معادل اجاره: <span class="rentMil"></span> (میلیون تومان)
-					<p class='legendText'>در <span class='timeTxt highlight'></span>
+					<p>در <span class='timeTxt highlight'></span>
 					، شما با <span class='salShare highlight'></span> درصد معادل حقوق خود
 					 می‌توانستید آپارتمانی با مساحت
 					 <span class='aptMeter highlight'></span> مترمربع را در مناطق زرد رنگ اجاره کنید. [<a href="https://github.com/alitayebi/maps/tree/master/rent#readme">توضیحات</a>]</p>
+					 <p><span class="symbol available">توانایی</span> <span class="symbol unavailable">ناتوانی</span> <span class="symbol nd">فاقد اطلاعات</span></p>
+					 <p class="notes">* داده‌های اجاره‌بها: مرکز آمار ایران <br>** نرخ رسمی افزایش حقوق سالیانه: مصوبات هیئت دولت ایران</p>
 				</div>
 				<div class="legend-footer">
-					<p><span class="symbol available">توانایی</span> <span class="symbol unavailable">ناتوانی</span> <span class="symbol nd">فاقد اطلاعات</span></p>
-					<p class="notes">* داده‌های اجاره‌بها: مرکز آمار ایران <br>** نرخ رسمی افزایش حقوق سالیانه: مصوبات هیئت دولت ایران</p>
 				</div>
 			</div>
 		</div><!-- end wrapper -->
@@ -61,7 +61,6 @@
 		<script src="../assets/js/jquery-3.6.0.js"></script>
 		<script src="../assets/leaflet/leaflet.js"></script>
 		<script src="../assets/leaflet/leaflet-slider.js"></script>
-		<script src="assets/main.js?v=0.1"></script>
-		<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js" integrity="sha256-6XMVI0zB8cRzfZjqKcD01PBsAy3FlDASrlC8SxCpInY=" crossorigin="anonymous"></script>
+		<script src="assets/main.js?v=0.2"></script>
 	</body>
 	</html>

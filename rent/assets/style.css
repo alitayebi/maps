@@ -100,9 +100,8 @@ html, body, #map {
 	.temporal {float:right;}
 	.temporal-legendc {display: none;}
 	#legendTitle {
-  	  	text-align: center;
-   	 	margin-bottom: 15px;
-   		font-variant: small-caps;
+	  	text-align: center;
+   	 	margin: 5px 0 0 0;
 	}
 	.symbolsContainer {
     		float: left;
@@ -170,7 +169,7 @@ html, body, #map {
     font-size: smaller;
   }
   .legend-content {
-    padding: 20px;
+    padding: 0 20px;
   }
   .legend-content * {
     width: 100% !important;

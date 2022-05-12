@@ -6,7 +6,7 @@ var region, timestampN,inflData,regionsData,
 		});
 L.tileLayer('https://tile.thunderforest.com/transport/{z}/{x}/{y}.png?apikey=48584cb50e384399b635995577038af7', {
 		maxZoom: 20,
-		attribution: '&copy; Ali Tayebi | &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> Thunderforest'
+		attribution: '&copy; <a href="https://twitter.com/alitayebi">Ali Tayebi</a> | &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> Thunderforest'
 	}).addTo(map);
 $.ajax({
   url:"data/infl.json",
