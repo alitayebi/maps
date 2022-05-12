@@ -1,11 +1,77 @@
 @font-face {
-    font-family: 'Vazir';
-    src: url('../../assets/fonts/Vazir.eot');
-    src: url('../../assets/fonts/Vazir.woff') format('woff'), url('../../assets/fonts/Vazir.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: Vazirmatn FD;
+  src: url('../../assets/fonts/Vazirmatn-FD-Thin.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
 }
+
+@font-face {
+  font-family: Vazirmatn FD;
+  src: url('../../assets/fonts/Vazirmatn-FD-ExtraLight.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Vazirmatn FD;
+  src: url('../../assets/fonts/Vazirmatn-FD-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Vazirmatn FD;
+  src: url('../../assets/fonts/Vazirmatn-FD-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Vazirmatn FD;
+  src: url('../../assets/fonts/Vazirmatn-FD-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Vazirmatn FD;
+  src: url('../../assets/fonts/Vazirmatn-FD-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Vazirmatn FD;
+  src: url('../../assets/fonts/Vazirmatn-FD-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Vazirmatn FD;
+  src: url('../../assets/fonts/Vazirmatn-FD-ExtraBold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Vazirmatn FD;
+  src: url('../../assets/fonts/Vazirmatn-FD-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 html, body, #map {
+    font-family: Vazirmatn FD, Arial, Helvetica, sans-serif;
         margin: 0;
         padding: 0;
         height: 100% !important;
@@ -19,12 +85,12 @@ html, body, #map {
 	 margin: 0;
 	}
 .leaflet-container {
-    font: 12px/1.5 Vazir, Arial, Helvetica, sans-serif;
+    font: 12px/1.5;
 }
 .leaflet-popup-content-wrapper { text-align:center;}
 	.leaflet-bottom {
    		padding: 6px 10px;
-    		font: 14px/16px Vazir, Arial, Helvetica, sans-serif;
+    		font: 14px/16px;
    		background: white;
     		background: rgba(255,255,255,0.8);
     		box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -78,12 +144,39 @@ html, body, #map {
   letter-spacing: -.07em;
   text-shadow: white 2px 2px 2px;
 }
+.legend {
+  font-size: 2.5vh;
+  position: absolute;
+  z-index: 999;
+  top: 10px;
+  left: 10px;
+  bottom: 10px;
+  background: #fffc;
+  padding: 10px;
+  overflow: hidden;
+}
+@media screen and (max-width: 600px) {
+  .legend {
+    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+    top:unset;
+    left: 0;
+    bottom: 0;
+    padding: 0;
+    font-size: smaller;
+  }
+  .legend-content {
+    padding: 20px;
+  }
+  .legend-content * {
+    width: 100% !important;
+  }
+}
 input[type="range"] {
   display: block;
   -webkit-appearance: none;
   background-color: #bdc3c7;
   width: 300px;
-  height: 20px;
+  height: 5px;
   border-radius: 5px;
   margin: 0 auto;
   outline: 0;
@@ -97,11 +190,28 @@ input[type="range"]::-webkit-slider-thumb {
   border: 2px solid white;
   cursor: pointer;
   transition: .3s ease-in-out;
+}​
+input[type="range"]::-webkit-slider-thumb:hover  {
+  background-color: white;
+  border: 2px solid #e74c3c;
 }
-  input[type="range"]::-webkit-slider-thumb:hover {
+input[type="range"]::-webkit-slider-thumb:active {
+  transform: scale(1.6);
+}
+input[type="range"]::-moz-range-thumb {
+  -webkit-appearance: none;
+  background-color: #e74c3c;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid white;
+  cursor: pointer;
+  transition: .3s ease-in-out;
+}​
+input[type="range"]::-moz-range-thumb:hover  {
     background-color: white;
     border: 2px solid #e74c3c;
   }
-  input[type="range"]::-webkit-slider-thumb:active {
+input[type="range"]::-moz-range-thumb:active {
     transform: scale(1.6);
   }
