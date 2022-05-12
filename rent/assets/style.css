@@ -101,7 +101,7 @@ html, body, #map {
 }
 .legend {
   position: absolute;
-  width: 300px;
+  width: 320px;
   z-index: 999;
   left: 10px;
   bottom: 10px;
