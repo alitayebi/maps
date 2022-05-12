@@ -78,73 +78,30 @@ html, body, #map {
     direction: rtl;
     }
 
-	#wrapper {
-	 width: 100%;
-        height: 100% !important;
+#wrapper {
+ width: 100%;
+      height: 100% !important;
 
-	 margin: 0;
-	}
+ margin: 0;
+}
 .leaflet-container {
     font: 12px/1.5;
 }
-.leaflet-popup-content-wrapper { text-align:center;}
-	.leaflet-bottom {
-   		padding: 6px 10px;
-    		font: 14px/16px;
-   		background: white;
-    		background: rgba(255,255,255,0.8);
-    		box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    		border-radius: 5px;
-    		    float: right;
-	}
-	.temporal {float:right;}
-	.temporal-legendc {display: none;}
-	#legendTitle {
-	  	text-align: center;
-   	 	margin: 5px 0 0 0;
-	}
-	.symbolsContainer {
-    		float: left;
-		margin-left: 50px;
-	}
-	.legendCircle {
-     	border-radius:50%;
-     	border: 1px solid #537898;
-     	background: rgba(113, 133, 152, .6);
-	 	display: inline-block;
-	}
-	.legendValue {
-    		position: absolute;
-    		right: 8px;
-	}
-    .legendText {
-        max-width: 300px;
-        text-align: justify;
-        line-height: 20px;
-    }
+#legendTitle {
+  	text-align: center;
+ 	 	margin: 5px 0 0 0;
+}
 .notes {
         font-style: italic;
     font-size: x-small;
     float: right;
 }
-.leaflet-container { touch-action: none;}
 .highlight {
     font-weight: bold;
 }
-.value {
-  border-bottom: 4px dashed #bdc3c7;
-  text-align: center;
-  font-weight: bold;
-  font-size: 10em;
-  width: 300px;
-  height: 100px;
-  line-height: 60px;
-  margin: 40px auto;
-  letter-spacing: -.07em;
-  text-shadow: white 2px 2px 2px;
-}
 .legend {
   position: absolute;
+  width: 300px;
   z-index: 999;
   left: 10px;
   bottom: 10px;
