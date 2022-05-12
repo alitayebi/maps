@@ -145,15 +145,20 @@ html, body, #map {
   text-shadow: white 2px 2px 2px;
 }
 .legend {
-  font-size: 2.5vh;
   position: absolute;
   z-index: 999;
-  top: 10px;
   left: 10px;
   bottom: 10px;
   background: #fffc;
   padding: 10px;
-  overflow: hidden;
+  border-radius: 5px;
+  overflow: scroll;
+  max-height: 100%;
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+}
+.legend::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
 }
 @media screen and (max-width: 600px) {
   .legend {

@@ -28,7 +28,7 @@ if (inflData.infl.length == (Object.keys(geoData.features[0].properties).length 
 	region = L.geoJson(geoData, {
 					style: { color: "#000", fillOpacity: .65}
 	}).addTo(map);
-	map.fitBounds(region.getBounds(), {padding: [-100, -100]});
+	map.fitBounds(region.getBounds(), {padding: [-50, -50]});
 			$(".leaflet-control-zoom").css("visibility", "hidden");
 	request["timestamps"] = inflData.infl.length
 	request["timestamp"] = inflData.infl.length;
@@ -38,8 +38,6 @@ if (inflData.infl.length == (Object.keys(geoData.features[0].properties).length 
 } else {
 	alert(failNote);
 }
-
-
 function updateSymbology() {
 	timestamp = request["timestamp"];
 	request["timeTxt"] = inflData.infl[timestamp-1].Time;
@@ -68,59 +66,32 @@ function updateSymbology() {
 	})
 }
 $(document).ready(function () {
-		var legendHtml = `
-		<h2 id='legendTitle'>توان اجاره‌نشینی</h2>
-		<p>حقوق <small>(در سال ۱۴۰۰)</small>: <span class='salValue'>${request['salValue']}</span> میلیون تومان</p>
-		<input name='salValue' type="range" min="2" max="20" step="1" value="${request['salValue']}">
-		<p>سهم اجاره از حقوق: <span class='salShare'>${request['salShare']}</span> درصد</p>
-		<input name='salShare' type="range" min="10" max="100" step="10" value="${request['salShare']}">
-		<p>آپارتمان: <span class='aptMeter'>${request['aptMeter']}</span> مترمربعی</p>
-		<input name='aptMeter' type="range" min="10" max="150" step="10" value="${request['aptMeter']}">
-		<h3>تغییر در زمان:</h3>
-		<p>زمان: <span class='timeTxt'>${request['timeTxt']}</span></p>
-		<input name='timestamp' type="range" min="1" max="${request['timestamps']}" step="1" value="${request['timestamps']}">
-		<small>معادل حقوق: <span class="salCalbr">${request['salCalbr']}</span> | معادل اجاره: <span class="rentMil">${request['rentMil']}</span> (میلیون تومان)
-		<p class='legendText'>در <span class='timeTxt highlight'> ${request['timeTxt']}</span>
-		، شما با <span class='salShare highlight'>${request['salShare']}</span> درصد معادل حقوق خود
-		 می‌توانستید آپارتمانی با مساحت
-		 <span class='aptMeter highlight'>${request['aptMeter']}</span> مترمربع را در مناطق زرد رنگ اجاره کنید</p>
-		<p class="notes">* داده‌های اجاره‌بها: مرکز آمار ایران <br>** نرخ رسمی افزایش حقوق سالیانه: مصوبات هیئت دولت ایران</p>
-		`;
-		$('.legend-content').append(legendHtml);
+	for (var key in request) {
+		$('input[name='+key+']').val(request[key]);
+		if (key == 'timestamp') {
+			$('input[name='+key+']').attr('max',request[key]);
+		}
+	}
 })
-$(document).on('change','input[type=range]', function (name) {
+$(document).on('change, input','input[type=range]', function (name) {
 	request[name.target.name] = $(this).val();
 	updateSymbology()
-	console.log(request);
 })
 function fitBoundsPadding() {
-  // get with info div
 	const boxInfoWith = document.querySelector('.legend').offsetWidth;
 	const mapInfoWith = document.querySelector('#map').offsetWidth;
 	if (boxInfoWith >= mapInfoWith) {
 		map.fitBounds(region.getBounds(), {
-	    // https://leafletjs.com/reference-1.6.0.html#fitbounds-options-paddingtopleft
-	    'paddingBottomRight': [ 10, boxInfoWith +10]
+	    'paddingBottomRight': [ 0, boxInfoWith]
 	  });
 	} else {
 		map.fitBounds(region.getBounds(), {
-	    // https://leafletjs.com/reference-1.6.0.html#fitbounds-options-paddingtopleft
-			'paddingBottomRight': [boxInfoWith + 10, 10]
+	    'paddingTopLeft': [ boxInfoWith,0 ]
 	  });
 
 	}
-  // sets a map view that contains the given geographical bounds
-  // with the maximum zoom level possible
-  map.fitBounds(region.getBounds(), {
-    // https://leafletjs.com/reference-1.6.0.html#fitbounds-options-paddingtopleft
-    'paddingBottomRight': [ 10, boxInfoWith +10]
-  });
 }
-
-// trigger function on dom content loaded
 window.addEventListener('DOMContentLoaded', fitBoundsPadding);
-
-// trigger function resize window with performant on resize
 let timeout;
 window.addEventListener('resize', () => {
   clearTimeout(timeout);
