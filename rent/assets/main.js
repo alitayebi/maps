@@ -26,7 +26,7 @@ $.ajax({
 });
 if (inflData.infl.length == (Object.keys(geoData.features[0].properties).length -1)) {
 	region = L.geoJson(geoData, {
-					style: { color: "#000", fillOpacity: .65}
+					style: { color: "#000", fillOpacity: .65, weight: 1}
 	}).addTo(map);
 	map.fitBounds(region.getBounds(), {padding: [-50, -50]});
 			$(".leaflet-control-zoom").css("visibility", "hidden");
