@@ -220,3 +220,16 @@ input[type="range"]::-moz-range-thumb:hover  {
 input[type="range"]::-moz-range-thumb:active {
     transform: scale(1.6);
   }
+.symbol{
+  padding: 2px 5px;
+}
+.available {
+  background-color: rgba(255,255,0,0.7);
+}
+.unavailable {
+  background-color: rgba(0,0,0,0.7);
+  color: white;
+}
+.nd {
+  background-color: rgba(255,0,0,0.7);
+}
