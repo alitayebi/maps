@@ -17,6 +17,17 @@ function clickFeature(e) {
    var layer = e.target;
 }
 var voice;
+function createCustomIcon (feature, latlng) {
+  return L.circleMarker(latlng, {
+    radius: 5,
+    fillColor: "#ff0000",
+    color: "#ff0000",
+    weight: 2,
+    opacity: 1,
+    fillOpacity: 0.5,
+  })
+}
+
 // Get GeoJSON data and create features.
 function printMap(who,why,when) {
   map.eachLayer(function(layer) {
@@ -45,9 +56,8 @@ function printMap(who,why,when) {
     } 
   
     // verify in your console:
-  console.log(data.features);    
-        voice = L.geoJson(data, {
-
+    voice = L.geoJson(data, {
+        pointToLayer: createCustomIcon,
 				onEachFeature: function (feature, layer) {
 
 						layer.on('click', function (e) {
@@ -73,7 +83,3 @@ function printMap(who,why,when) {
         });
 }
 printMap('all','all','all')
-map.on('click', function() {
-    closepNav();
-    closeNav();
-});
