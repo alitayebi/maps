@@ -1,0 +1,97 @@
+/* @font-face {
+  font-family: Vazir;
+  src: url("../../../assets/fonts/Vazir.eot");
+  src: url("../../../assets/fonts/Vazir.eot?#iefix") format("embedded-opentype"), url("../../../assets/fonts/Vazir.woff2") format("woff2"), url("../../../assets/fonts/Vazir.woff") format("woff"), url("../../../assets/fonts/Vazir.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: Vazir;
+  src: url("../../../assets/fonts/Vazir-Bold.eot");
+  src: url("../../../assets/fonts/Vazir-Bold.eot?#iefix") format("embedded-opentype"), url("../../../assets/fonts/Vazir-Bold.woff2") format("woff2"), url("../../../assets/fonts/Vazir-Bold.woff") format("woff"), url("../../../assets/fonts/Vazir-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal; }
+@font-face {
+  font-family: Vazir;
+  src: url("../../../assets/fonts/Vazir-Black.eot");
+  src: url("../../../assets/fonts/Vazir-Black.eot?#iefix") format("embedded-opentype"), url("../../../assets/fonts/Vazir-Black.woff2") format("woff2"), url("../../../assets/fonts/Vazir-Black.woff") format("woff"), url("../../../assets/fonts/Vazir-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal; }
+@font-face {
+  font-family: Vazir;
+  src: url("../../../assets/fonts/Vazir-Medium.eot");
+  src: url("../../../assets/fonts/Vazir-Medium.eot?#iefix") format("embedded-opentype"), url("../../../assets/fonts/Vazir-Medium.woff2") format("woff2"), url("../../../assets/fonts/Vazir-Medium.woff") format("woff"), url("../../../assets/fonts/Vazir-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal; }
+@font-face {
+  font-family: Vazir;
+  src: url("../../../assets/fonts/Vazir-Light.eot");
+  src: url("../../../assets/fonts/Vazir-Light.eot?#iefix") format("embedded-opentype"), url("../../../assets/fonts/Vazir-Light.woff2") format("woff2"), url("../../../assets/fonts/Vazir-Light.woff") format("woff"), url("../../../assets/fonts/Vazir-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal; }
+@font-face {
+  font-family: Vazir;
+  src: url("../../../assets/fonts/Vazir-Thin.eot");
+  src: url("../../../assets/fonts/Vazir-Thin.eot?#iefix") format("embedded-opentype"), url("../../../assets/fonts/Vazir-Thin.woff2") format("woff2"), url("../../../assets/fonts/Vazir-Thin.woff") format("woff"), url("../../../assets/fonts/Vazir-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal; } */
+
+  html, body, #map {
+    font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding: 0;
+        height: 100% !important;
+    }
+
+#wrapper {
+ width: 100%;
+      height: 100% !important;
+
+ margin: 0;
+}
+.leaflet-container {
+    font: 12px/1.5;
+}
+#legendTitle {
+ 	 	margin: 5px 0 0 0;
+}
+.notes {
+    font-style: italic;
+    font-size: x-small;
+    float: right;
+}
+.highlight {
+    font-weight: bold;
+}
+.legend {
+  position: absolute;
+  width: 320px;
+  z-index: 999;
+  left: 10px;
+  bottom: 10px;
+  background: #fffc;
+  padding: 10px;
+  border-radius: 5px;
+  overflow: scroll;
+  max-height: 100%;
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+}
+.legend::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+}
+@media screen and (max-width: 600px) {
+  .legend {
+    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+    top:unset;
+    left: 0;
+    bottom: 0;
+    padding: 0;
+    font-size: smaller;
+  }
+  .legend-content {
+    padding: 0 20px;
+  }
+  .legend-content * {
+    width: 100% !important;
+  }
+}

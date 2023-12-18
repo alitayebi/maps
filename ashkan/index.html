@@ -1,0 +1,95 @@
+<html>
+    <head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <title>A Social History of Modern Tehran</title>
+        <link rel="stylesheet" href="../../assets/leaflet/leaflet.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="../../assets/css/MarkerCluster.css" />
+    	<link rel="stylesheet" href="../../assets/css/MarkerCluster.Default.css" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+      <link rel="stylesheet" href="../../assets/fonts/fontawesome/css/all.css" />
+    </head>
+    <body>
+		<div id="wrapper">
+			<div id="map"></div>
+			<div class="legend">
+				<div class="legend-header">
+					<h2 id='legendTitle'>A Social History of Modern Tehran</h2>
+                    <p class="notes">by <a href="https://www.cambridge.org/core/books/social-history-of-modern-tehran/570AC0600DD6DF6F6767A6A9012AB6B9" target="_blank">Ashkan Rezvani Naraghi</a></p>
+                </div>
+				<div class="legend-content">
+                    <h6>Who:</h6>
+					<p>
+                        <input type="radio" class="btn-check" name="options-who" id="who1" autocomplete="off" value="all" checked>
+                        <label class="btn btn-outline-secondary btn-sm my-1" for="who1">All</label>
+                        <input type="radio" class="btn-check" name="options-who" id="who2" value="tudih" autocomplete="off">
+                        <label class="btn btn-outline-secondary btn-sm my-1" for="who2">tudih party</label>
+                        <input type="radio" class="btn-check" name="options-who" id="who3" value="mossadegh"  autocomplete="off">
+                        <label class="btn btn-outline-secondary btn-sm my-1" for="who3">mossadegh supporter</label>
+                        <input type="radio" class="btn-check" name="options-who" id="who4" value="national front" autocomplete="off">
+                        <label class="btn btn-outline-secondary btn-sm my-1" for="who4">national front party</label>
+                        <input type="radio" class="btn-check" name="options-who" id="who5" value="university student" autocomplete="off">
+                        <label class="btn btn-outline-secondary btn-sm my-1" for="who5">university student</label>
+                    </p>
+                    <h6>Why:</h6>
+                    <p>
+                        <input type="radio" class="btn-check" name="options-why" id="why1" value="all" autocomplete="off" checked>
+                        <label class="btn btn-outline-secondary btn-sm my-1" for="why1">All</label>
+                        <input type="radio" class="btn-check" name="options-why" value="oil" id="why2" autocomplete="off">
+                        <label class="btn btn-outline-secondary btn-sm my-1" for="why2">oil</label>
+                        <input type="radio" class="btn-check" name="options-why" value="mossadegh" id="why3" autocomplete="off">
+                        <label class="btn btn-outline-secondary btn-sm my-1" for="why3">mossadegh</label>
+                        <input type="radio" class="btn-check" name="options-why" value="anniversary" id="why4" autocomplete="off">
+                        <label class="btn btn-outline-secondary btn-sm my-1" for="why4">anniversary</label>
+                        <input type="radio" class="btn-check" name="options-why" value="workers" id="why5" autocomplete="off">
+                        <label class="btn btn-outline-secondary btn-sm my-1" for="why5">workers</label>
+                    </p>
+                    <h6>When: <label for="whenRange" id ="whenLabel" class="form-label">1943-1953</label><button type="button" id="btnWhen" class="btn btn-sm btn-link">change</button><button type="button" id="btnWhenClear" class="btn btn-sm btn-link" style="display: none;">clear</button></h6>
+                    <p>
+                        <input type="range" class="form-range" value="1942" min="1942" max="1953" id="whenRange" style="display: none;">                        
+                    </p>
+				</div>
+				<div class="legend-footer">
+				</div>
+			</div>
+		</div><!-- end wrapper -->
+        <div id="popSidenav" class="psidenav bg-dark text-light">
+            <div class="p-3">
+                <h3>Who:<br><span class="geoWho"></span></h3>
+                <h3>When:<br><span class="geoWhen"></span></h3>
+                <h3>Why:<br><span class="geoWhy"></span></h3>
+                <h3>Where:<br><span class="geoWhere"></span></h4>
+                <h3>Source:<br><span class="geoSource"></span></h4>
+            </div>
+            <!-- <h1><i class="fas fa-calendar-day"></i><span class="geoTitle"></span></h1> -->
+        </div>
+        <div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventModal" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-body">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Who:</strong><br> <span class="geoWho"></span></li>
+                        <li class="list-group-item"><strong>When:</strong><br><span class="geoWhen"></span></li>
+                        <li class="list-group-item"><strong>Why:</strong><br><span class="geoWhy"></span></li>
+                        <li class="list-group-item"><strong>Where:</strong><br><span class="geoWhere"></span></li>
+                        <li class="list-group-item"><strong>Source:</strong><br><span class="geoSource"></span></li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        <script src="../../assets/js/jquery-3.6.0.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="../../assets/js/Chart.js"></script>
+        <script src="../../assets/leaflet/leaflet.js"></script>
+        <script src="../../assets/js/leaflet.ajax.js"></script>
+        <script src="../../assets/js/leaflet.markercluster.js"></script>
+        <script src="js/custom.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
