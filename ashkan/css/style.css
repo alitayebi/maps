@@ -92,6 +92,6 @@
     padding: 0 20px;
   }
   .legend-content * {
-    width: 100% !important;
+    /* width: 100% !important; */
   }
 }
